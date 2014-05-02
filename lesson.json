@@ -1,0 +1,15 @@
+{
+  "title": "Using REST APIs with Python",
+  "summary": "In this lesson we're going to learn what APIs are and how to use one of them in pyhton.",
+  "image_url": "http://i.imgur.com/JZaoiJt.jpg",
+  "author_github_username": "kartiktalwar",
+  "events": [
+    {
+      "location": "GitHub, 88 Colin P Kelly Jr St San Francisco CA 94107",
+      "date": "Sat Apr 12 2014 10:00:00 GMT-0700 (PDT)",
+      "length_in_hours": null,
+      "teacher_github_username": null
+    }
+  ],
+  "length": "3"
+}
