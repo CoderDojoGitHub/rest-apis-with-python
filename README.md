@@ -56,6 +56,10 @@ get = urllib2.urlopen(api).read()
 print get
 ```
 
+**This gives us something like:**
+
+![](https://camo.githubusercontent.com/92500dcee84fac0a563104ed2ee62df2ae9e099b/687474703a2f2f692e696d6775722e636f6d2f4a5553354945622e706e67)
+
 ### Parsing JSON in python
 
 ```py
@@ -68,6 +72,13 @@ data = json.loads(get)
 
 print data
 ```
+
+**This gives us something like:**
+
+![](https://cloud.githubusercontent.com/assets/461702/2912224/74e236a2-d673-11e3-866f-63355c0c44b9.JPG)
+
+
+
 
 ### Writing a function to return our data
 
@@ -82,10 +93,25 @@ def get_data(api):
   return data
   
 api = "https://publicdata-weather.firebaseio.com/sanfrancisco/currently.json"
+data = get_data(api)
 
-print get_data(api)
+print data
 ```
 
+### Reading JSON in Python
+
+Reading is simple. We just need to define the key name and we get back it's value!
+
+```py
+print data['temperature'] #=> 52.46
+prnt data['summary'] #=> "Partly Cloudy"
+```
+
+#### Tasks
+
+- **Lets print a few more properties**
+- **Print the temperature in Celsius**
+  - Use the formula:  `(temperature -32) * 5.0/9.0`
 
 ## Checking MUNI Status
 
