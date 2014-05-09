@@ -115,8 +115,45 @@ prnt data['summary'] #=> "Partly Cloudy"
 
 ## Checking MUNI Status
 
+We are going to make things a little bit more interesting. We are going to find where our favorite muni bus is in the city. To do this, we are going to need just 1 thing:
+
+- The `id` of a bus
+
+
+Let's use firebase's MUNI API again
+
+
 ```py
+api = "https://publicdata-transit.firebaseio.com/sf-muni/data.json"
+data = get_data(api)
 ```
+
+#### DONT PRINT THIS `data` VARIABLE
+
+![](https://cloud.githubusercontent.com/assets/461702/2923448/f37b0d6a-d716-11e3-81c1-9394e7f2f5ea.JPG)
+
+## Let's find our favorite bus
+
+```py
+api = "https://publicdata-transit.firebaseio.com/sf-muni/data.json"
+data = get_data(api)
+
+def find_bus(bus_name, data):
+  for bus_id, bus_info in data.iteritems():
+    if bus_info['routeTag']:
+      return bus_info
+
+# for routes that are just numbers the input parameter 
+# should be int instead of string
+location = find_bus('N', data)
+
+latitude = location['lat']
+longitude = location['lon']
+
+print latitude
+print longitude
+```
+
 
 ## Lets add Maps!
 
