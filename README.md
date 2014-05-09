@@ -145,7 +145,8 @@ def find_bus(bus_name, data):
 
 # for routes that are just numbers the input parameter 
 # should be int instead of string
-location = find_bus('N', data)
+number = 'N'
+location = find_bus(number, data)
 
 latitude = location['lat']
 longitude = location['lon']
