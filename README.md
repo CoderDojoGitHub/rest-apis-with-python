@@ -154,11 +154,22 @@ print latitude
 print longitude
 ```
 
+![](https://cloud.githubusercontent.com/assets/461702/2923497/8c988058-d718-11e3-88bb-8e0c1e2bcd6b.JPG)
 
 ## Lets add Maps!
 
 ```py
+def get_map(latitude, longitude):
+  size = '600x450'
+  zoom = '16'
+  url = "http://maps.google.com/maps/api/staticmap?size=%s&maptype=roadmap&markers=size:mid|color:red|%s,%s&sensor=false&zoom=%s"
+  
+  return url % (size, latitude, longitude, zoom)
+
+print get_map(latitude, longitude)
 ```
+
+![](http://maps.google.com/maps/api/staticmap?size=600x450&maptype=roadmap&markers=size:mid|color:red|37.7794,-122.40215&sensor=false&zoom=16)
 
 ## Homework
 
